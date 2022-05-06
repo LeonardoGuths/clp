@@ -22,7 +22,7 @@ int main ()
         tempo = clock();
         for (j=0; j<500; j++)
         {
-            matriz[i][j] = matriz[i][j] + matriz[j][i] + 4 + 6;
+            matriz[i][j] = ((matriz[i][j] + matriz[j][i]) + 4) + 6;
         }
         tempo = clock() - tempo;
         tempo_total += ((double)tempo)/CLOCKS_PER_SEC;

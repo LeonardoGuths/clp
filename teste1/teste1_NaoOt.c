@@ -24,7 +24,7 @@ int main ()
         tempo = clock();
         for (j=0; j<500; j++)
         {
-            somaMatriz(matriz[i][j], matriz[j][i]);
+            matriz[i][j] = somaMatriz(matriz[i][j], matriz[j][i]);
         }
         tempo = clock() - tempo;
         tempo_total += ((double)tempo)/CLOCKS_PER_SEC;
@@ -37,8 +37,8 @@ int main ()
 
 int somaMatriz (int x, int y)
 {
-    x = x+y;
-    x = x+4.0;
-    x = x+6.0;
+    x = x + y;
+    x = x + 4.0;
+    x = x + 6.0;
     return x;
 }
