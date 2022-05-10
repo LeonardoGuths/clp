@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-void vetores(int *a, int *b, int m);
 
 int main ()
 {
@@ -16,21 +15,15 @@ int main ()
     for (x=0; x<iteracoes; x++)
     {
         tempo = clock();
-
-        for (m=0; m<10; m++)
-            vetores(a, b, m);
-
+  
+        #pragma vector always
+        for(int i = 0; i < 1000000; i++) 
+            a[i] = b[i]+1;
+        
         tempo = clock() - tempo;
         tempo_total += ((double)tempo)/CLOCKS_PER_SEC;
     }
     
     printf ("tempo medio: %lf\n",tempo_total/iteracoes);
 
-}
-
-void vetores(int *a, int *b, int m)
-{ 
-    #pragma vector always
-    for(int i = 0; i < 100000; i++) 
-        a[i*m] = b[i*m]; 
 }

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void vetores(int *a, int *b, int m);
+
 
 int main ()
 {
@@ -17,9 +17,10 @@ int main ()
     {
         tempo = clock();
 
-        for (m=0; m<10; m++)
-            vetores(a, b, m);
-
+        #pragma novector
+        for(int i = 0; i < 1000000; i++) 
+            a[i] = b[i] +1; 
+        
         tempo = clock() - tempo;
         tempo_total += ((double)tempo)/CLOCKS_PER_SEC;
     }
@@ -28,9 +29,3 @@ int main ()
 
 }
 
-void vetores(int *a, int *b, int m)
-{ 
-    #pragma novector
-    for(int i = 0; i < 100000; i++) 
-        a[i*m] = b[i*m]; 
-}
