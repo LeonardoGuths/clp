@@ -12,7 +12,6 @@ int main()
 {
     double tempo;
     int i, j, k, x, iteracoes=1000;
-    time_t time1, time2;
 
     for (i=0; i<T_MAT; i++)
     {
