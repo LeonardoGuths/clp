@@ -30,9 +30,9 @@ int main()
     { 
         for (i=0; i<T_MAT; i++)
         {
-            for (j=0; j<T_MAT; j++)
+            for (k=0; k<T_MAT; k++)
             {
-                for (k=0; k<T_MAT; k++)
+                for (j=0; j<T_MAT; j++)
                 {
                     R[i][j] += A[i][k] * B[k][j];
                 }
